@@ -72,16 +72,26 @@ input {
     height: 100%;
     background: #e4e7ea;
     padding: 20px;
+    overflow-y: scroll;
 }
-.nav-container {
+.nav-left-container {
     width: 250px;
     height: 100%;
     background: #1d2939;
     padding: 30px 20px;
 }
+.nav-top-container {
+    width: 100%;
+    background: #fff;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
 .nav-user-container {
     text-align: center;
-    margin-bottom: 50px;
+    color: #fff;
 }
 .nav-container .title {
     color: #fff;

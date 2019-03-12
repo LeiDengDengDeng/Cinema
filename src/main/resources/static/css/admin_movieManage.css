@@ -1,7 +1,6 @@
 .movie-item {
     list-style: none;
     display: flex;
-    height: 160px;
     margin-top: 20px;
     border-bottom: 1px solid #ccc;
 }
@@ -12,7 +11,7 @@
 
 .movie-info {
     flex: 1;
-    padding: 10px 20px;
+    padding: 10px 20px 0 20px;
 }
 
 .movie-title {

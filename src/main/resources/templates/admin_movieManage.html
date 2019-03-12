@@ -22,8 +22,8 @@
 </head>
 <body>
 <div class="main-container">
-    <div class="nav-container">
-        <div class="nav-user-container">
+    <div class="nav-left-container">
+        <div class="nav-user-container" style="margin-bottom: 50px;">
             <img class="avatar" src="/images/defaultAvatar.jpg" />
             <p class="title">Admin</p>
         </div>
@@ -52,23 +52,35 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="movieNameInput">电影名称</label>
-                        <input type="text" class="form-control" id="movieNameInput" placeholder="请输入电影名称">
+                        <label for="movie-name-input">电影名称</label>
+                        <input type="text" class="form-control" id="movie-name-input" placeholder="请输入电影名称">
                     </div>
                     <div class="form-group">
-                        <label for="movieDescriptionInput">电影描述</label>
-                        <input type="password" class="form-control" id="movieDescriptionInput" placeholder="请输入电影描述">
+                        <label for="movie-description-input">描述</label>
+                        <input type="text" class="form-control" id="movie-description-input" placeholder="请输入电影描述">
                     </div>
                     <div class="form-group">
-                        <label for="movieImgInput">File input</label>
-                        <input type="file" id="movieImgInput">
+                        <label for="movie-img-input">海报</label>
+                        <input type="text" class="form-control" id="movie-img-input">
                         <p class="help-block">文件不能过大</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="movie-star-input">主演</label>
+                        <input type="text" class="form-control" id="movie-star-input" placeholder="请输入电影主演">
+                    </div>
+                    <div class="form-group">
+                        <label for="movie-director-input">导演</label>
+                        <input type="text" class="form-control" id="movie-director-input" placeholder="请输入电影导演">
+                    </div>
+                    <div class="form-group">
+                        <label for="movie-description-input">类型</label>
+                        <input type="text" class="form-control" id="movie-type-input" placeholder="请输入电影类型">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary">确认</button>
+                <button type="button" class="btn btn-primary" id="movie-form-btn">确认</button>
             </div>
         </div>
     </div>

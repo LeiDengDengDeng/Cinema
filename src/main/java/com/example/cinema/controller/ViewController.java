@@ -18,4 +18,9 @@ public class ViewController {
     public String getAdminMovieManage() {
         return "admin_movieManage";
     }
+
+    @RequestMapping(value = "/user/movie")
+    public String getUserMovie() {
+        return "user_movie";
+    }
 }

@@ -1,38 +1,6 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
     getMovieList();
-
-    $("#movie-form-btn").click(function () {
-        $.ajax({
-            type: 'POST',
-            url: '/movie/add',
-            data: JSON.stringify(getMovieForm()),
-            async: true,
-            contentType: 'application/json',
-            processData: false,
-            success: function (res) {
-                getMovieList();
-                $("#movieModal").modal('hide');
-            },
-            error: function (error) {
-                alert(error);
-            }
-        });
-
-    });
-
-    function getMovieForm() {
-        var movieForm = {
-            name: $('#movie-name-input').val(),
-            description: $('#movie-description-input').val(),
-            posterUrl: $('#movie-img-input').val(),
-            starring: $('#movie-star-input').val(),
-            director: $('#movie-director-input').val(),
-            type: $('#movie-type-input').val()
-        };
-
-        return movieForm;
-    }
 
     function getMovieList() {
         $.ajax({
@@ -45,7 +13,7 @@ $(document).ready(function(){
             error: function (error) {
                 alert(error);
             }
-        });
+        })
     }
 
     function renderMovieList(list) {
@@ -70,4 +38,5 @@ $(document).ready(function(){
         });
         $('.movie-on-list').append(movieDomStr);
     }
+
 });
