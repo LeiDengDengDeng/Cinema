@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+}
+input {
+    width: 250px;
+    height: 25px;
+    border: 0;
+}
+.card {
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: #ccc 1px 0 0 0;
+}
+.title {
+    font-size: 24px;
+    text-align: center;
+}
+.avatar {
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+}
+.label {
+    padding: 5px;
+    color: #fff;
+    border-radius: 10px!important;
+    margin: 0 20px;
+}
+/**
+    颜色相关
+ */
+.gray-text {
+    color: #777;
+}
+.dark-text {
+    color: #666;
+}
+.error-text {
+    color: #ed5565;
+}
+.primary-text {
+    color: #1caf9a;
+}
+.primary-bg {
+    background: #1caf9a;
+}
+.error-bg {
+    background: #ed5565;
+}
+/**
+    form相关
+ */
+
+
+/**
+    导航相关
+ */
+.main-container {
+    display: flex;
+    height: 100%;
+}
+.content-container {
+    flex: 1;
+    height: 100%;
+    background: #e4e7ea;
+    padding: 20px;
+}
+.nav-container {
+    width: 250px;
+    height: 100%;
+    background: #1d2939;
+    padding: 30px 20px;
+}
+.nav-user-container {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.nav-container .title {
+    color: #fff;
+}
+

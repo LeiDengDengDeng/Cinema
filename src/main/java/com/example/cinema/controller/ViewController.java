@@ -13,4 +13,9 @@ public class ViewController {
     public String getIndex() {
         return "index";
     }
+
+    @RequestMapping(value = "/admin/movieManage")
+    public String getAdminMovieManage() {
+        return "admin_movieManage";
+    }
 }
