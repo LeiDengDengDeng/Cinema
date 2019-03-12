@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.cinema.dao.MovieMapper">
+    <insert id="insertOneMovie" parameterType="com.example.cinema.form.MovieForm"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into movie(name, poster_url, director, screen_writer, starring, type, country, language, length, start_date, end_date, description)
+        values(#{name}, #{posterUrl}, #{director},  #{screenWriter}, #{starring}, #{type}, #{country}, #{language}, #{length}, #{startDate}, #{endDate}, #{description})
+    </insert>
+
+    <select id="selectMovieById" resultType="com.example.cinema.form.MovieForm">
+        select * from movie where id = #{id}
+    </select>
+
+    <select id="selectAllMovie" resultType="com.example.cinema.form.MovieForm">
+        select * from movie
+    </select>
+
+</mapper>
