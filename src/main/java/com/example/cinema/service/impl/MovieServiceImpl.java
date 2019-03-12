@@ -21,6 +21,7 @@ public class MovieServiceImpl implements MovieService {
             movieMapper.insertOneMovie(addMovieForm);
             return ResponseVO.buildSuccess();
         }catch (Exception e){
+            e.printStackTrace();
             return ResponseVO.buildFailure("失败");
         }
     }
