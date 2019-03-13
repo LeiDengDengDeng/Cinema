@@ -1,6 +1,6 @@
-package com.example.cinema.dao;
+package com.example.cinema.data;
 
-import com.example.cinema.form.MovieForm;
+import com.example.cinema.po.MovieForm;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

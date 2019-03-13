@@ -1,4 +1,4 @@
-package com.example.cinema.form;
+package com.example.cinema.po;
 
 import java.util.Date;
 

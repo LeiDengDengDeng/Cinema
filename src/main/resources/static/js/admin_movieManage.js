@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     getMovieList();
 
-    $("#movie-form-btn").click(function () {
+    $("#movie-po-btn").click(function () {
         $.ajax({
             type: 'POST',
             url: '/movie/add',

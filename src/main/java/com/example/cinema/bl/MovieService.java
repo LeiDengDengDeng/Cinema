@@ -1,8 +1,7 @@
-package com.example.cinema.service;
+package com.example.cinema.bl;
 
-import com.example.cinema.form.MovieForm;
+import com.example.cinema.po.MovieForm;
 import com.example.cinema.vo.ResponseVO;
-import org.springframework.stereotype.Service;
 
 /**
  * @author fjj

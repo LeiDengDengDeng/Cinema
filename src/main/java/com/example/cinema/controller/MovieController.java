@@ -1,7 +1,7 @@
 package com.example.cinema.controller;
 
-import com.example.cinema.form.MovieForm;
-import com.example.cinema.service.MovieService;
+import com.example.cinema.po.MovieForm;
+import com.example.cinema.bl.MovieService;
 import com.example.cinema.vo.ResponseVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

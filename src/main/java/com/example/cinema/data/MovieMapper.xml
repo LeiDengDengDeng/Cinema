@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.cinema.dao.MovieMapper">
-    <insert id="insertOneMovie" parameterType="com.example.cinema.form.MovieForm"
+<mapper namespace="com.example.cinema.data.MovieMapper">
+    <insert id="insertOneMovie" parameterType="com.example.cinema.po.MovieForm"
             useGeneratedKeys="true" keyProperty="id">
         insert into movie(name, poster_url, director, screen_writer, starring, type, country, language, length, start_date, end_date, description)
         values(#{name}, #{posterUrl}, #{director},  #{screenWriter}, #{starring}, #{type}, #{country}, #{language}, #{length}, #{startDate}, #{endDate}, #{description})
@@ -15,7 +15,7 @@
         select * from movie
     </select>
 
-    <resultMap id="Movie" type="com.example.cinema.form.MovieForm">
+    <resultMap id="Movie" type="com.example.cinema.po.MovieForm">
         <id column="id" property="id"></id>
         <result column="poster_url" property="posterUrl"></result>
         <result column="screen_writer" property="screenWriter"></result>
