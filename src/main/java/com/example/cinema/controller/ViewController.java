@@ -20,7 +20,17 @@ public class ViewController {
     }
 
     @RequestMapping(value = "/user/home")
-    public String getUserMovie() {
+    public String getUserHome() {
         return "user_home";
+    }
+
+    @RequestMapping(value = "/user/movie")
+    public String getUserMovie() {
+        return "user_movie";
+    }
+
+    @RequestMapping(value = "/user/buy")
+    public String getUserBuy() {
+        return "user_buy";
     }
 }

@@ -26,7 +26,7 @@ $(document).ready(function () {
                 "<img class='movie-img' src='" + (movie.posterUrl || "../images/bg.jpg") + "'/>" +
                 // "<div class='movie-info'>" +
                 // "<p class='movie-title primary-text'>" +
-                // "<span>" + movie.name + "</span>" +
+                "<p class='movie-name'>" + movie.name + "</p>" +
                 // "<span class='label "+(movie.showState ? 'primary-bg' : 'error-bg')+"'>" + (movie.showState ? '上映中' : '未上映') + "</span>" +
                 // "</p>" +
                 // "<p class='dark-text'>" + (movie.description.length < 160 ? movie.description : (movie.description.substr(0,160) + '...')) + "</p>" +
