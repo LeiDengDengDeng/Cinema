@@ -27,4 +27,34 @@ public interface MovieService {
      * @return
      */
     ResponseVO searchAllMovie();
+
+    /**
+     * 想看电影
+     * @param userId
+     * @param movieId
+     * @return
+     */
+    ResponseVO likeMovie(int userId,int movieId);
+
+    /**
+     * 取消想看电影
+     * @param userId
+     * @param movieId
+     * @return
+     */
+    ResponseVO unLikeMovie(int userId,int movieId);
+
+    /**
+     * 统计想看电影的人数
+     * @param movieId
+     * @return
+     */
+    ResponseVO getCountOfLikes(int movieId);
+
+
+
+
+
+
+
 }
