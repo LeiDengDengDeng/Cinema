@@ -7,6 +7,7 @@ import com.example.cinema.vo.ResponseVO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpSession;
 
@@ -20,7 +21,7 @@ public class AccountController {
     @Autowired
     private AccountServiceImpl accountService;
     @PostMapping("/login")
-    public ResponseVO login(@Param("user") UserForm userForm, HttpSession session){
+    public ResponseVO login(@RequestBody UserForm userForm, HttpSession session){
 
         if(!accountService.login(userForm)){
            return ResponseVO.buildFailure(ACCOUNT_INFO_ERROR);
@@ -30,7 +31,7 @@ public class AccountController {
         return ResponseVO.buildSuccess();
     }
     @PostMapping("/register")
-    public ResponseVO registerAccount(@Param("user") UserForm userForm){
+    public ResponseVO registerAccount(@RequestBody  UserForm userForm){
         return accountService.registerAccount(userForm);
     }
 
