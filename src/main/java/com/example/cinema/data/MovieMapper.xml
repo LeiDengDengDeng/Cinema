@@ -12,11 +12,12 @@
     </select>
 
     <select id="selectMovieByIdAndUserId" resultMap="Movie">
-        select * from movie left join movie_like on movie_like.user_id = 1 and movie.id = movie_like.movie_id;
+        select * from (select * from movie m,(select count(*) as isLike from movie_like ml where ml.movie_id = #{id} and ml.user_id = #{userId}) ik where id = #{id}) a
+        left join (select l.movie_id as id, count(*) as likeCount from movie_like l where l.movie_id = #{id}) b on a.id = b.id
     </select>
 
     <select id="selectAllMovie" resultMap="Movie">
-        select m.*,count(*) as likeCount from movie m left join movie_like on m.id = movie_like.movie_id group by m.id
+        select * from movie m left join (select l.movie_id, count(*) as likeCount from movie_like l group by l.movie_id) l on m.id = l.movie_id
     </select>
 
     <select id="selectMovieByKeyword" resultMap="Movie">
