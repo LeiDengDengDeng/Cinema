@@ -39,4 +39,11 @@ public interface MovieMapper {
      * @return
      */
     List<MovieVO> searchAllMovie();
+
+    /**
+     * 根据关键字搜索电影
+     * @param keyword
+     * @return
+     */
+    List<MovieForm> selectMovieByKeyword(String keyword);
 }
