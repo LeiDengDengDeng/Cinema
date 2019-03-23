@@ -5,7 +5,9 @@
     <title>电影</title>
     <!-- 引入css样式文件 -->
     <link rel="stylesheet" type="text/css" href="/css/common.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/admin_movieManage.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/movieList.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/userMovie.css"/>
+
 
     <!-- Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
@@ -17,14 +19,14 @@
     <script src="/js/jquery.js"></script>
     <!-- Bootstrap 核心 JavaScript 文件 -->
     <script src="/js/bootstrap.js"></script>
-    <script src="/js/user_movie.js"></script>
+    <script src="/js/userMovie.js"></script>
 </head>
 <body>
     <div class="nav-top-container">
         <div class="nav-logo title">NJU-Se电影购票系统</div>
         <ul class="nav nav-pills">
-            <li role="presentation" class="active"><a href="#">首页</a></li>
-            <li role="presentation"><a href="/user/movie">电影</a></li>
+            <li role="presentation"><a href="/user/home">首页</a></li>
+            <li role="presentation" class="active"><a href="#">电影</a></li>
             <li role="presentation"><a href="/user/buy">购票</a></li>
         </ul>
         <div class="nav-user-container">
@@ -33,14 +35,23 @@
         </div>
     </div>
     <div class="content-container">
-        <div class="filler-container">
-            <div class="filler-item">
-                <ul style="display: flex">
-                    <span>类型：</span>
-                    <li><a>喜剧</a></li>
-                    <li><a>科幻</a></li>
-                </ul>
-            </div>
+        <div class="filler-container card">
+            <ul class="filler-item" style="display: flex">
+                <span>类型：</span>
+                <li><a class="active">全部</a></li>
+                <li><a>科幻</a></li>
+                <li><a>喜剧</a></li>
+                <li><a>科幻</a></li>
+                <li><a>喜剧</a></li>
+                <li><a>todo筛选</a></li>
+            </ul>
+            <ul class="filler-item" style="display: flex">
+                <span>状态：</span>
+                <li><a class="active">全部</a></li>
+                <li><a>上映中</a></li>
+                <li><a>未上映</a></li>
+                <li><a>已下架</a></li>
+            </ul>
         </div>
         <ul class="movie-on-list">
         </ul>

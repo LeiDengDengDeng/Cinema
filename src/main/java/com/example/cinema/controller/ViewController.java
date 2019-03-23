@@ -16,21 +16,21 @@ public class ViewController {
 
     @RequestMapping(value = "/admin/movieManage")
     public String getAdminMovieManage() {
-        return "admin_movieManage";
+        return "adminMovieManage";
     }
 
     @RequestMapping(value = "/user/home")
     public String getUserHome() {
-        return "user_home";
+        return "userHome";
     }
 
     @RequestMapping(value = "/user/movie")
     public String getUserMovie() {
-        return "user_movie";
+        return "userMovie";
     }
 
     @RequestMapping(value = "/user/buy")
     public String getUserBuy() {
-        return "user_buy";
+        return "userBuy";
     }
 }
