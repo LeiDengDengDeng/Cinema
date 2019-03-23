@@ -62,7 +62,7 @@ public class MovieServiceImpl implements MovieService {
     public ResponseVO likeMovie(int userId, int movieId) {
         //todo: user 判空
         if (userLikeTheMovie(userId, movieId)) {
-            return ResponseVO.buildFailure(UNLIKE_ERROR_MESSAGE);
+            return ResponseVO.buildFailure(ALREADY_LIKE_ERROR_MESSAGE);
         } else if (movieMapper.selectMovieById(movieId) == null) {
             return ResponseVO.buildFailure(MOVIE_NOT_EXIST_ERROR_MESSAGE);
         }
@@ -76,7 +76,7 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public ResponseVO unLikeMovie(int userId, int movieId) {
         if (!userLikeTheMovie(userId, movieId)) {
-            return ResponseVO.buildFailure(ALREADY_LIKE_ERROR_MESSAGE);
+            return ResponseVO.buildFailure(UNLIKE_ERROR_MESSAGE);
         } else if (movieMapper.selectMovieById(movieId) == null) {
             return ResponseVO.buildFailure(MOVIE_NOT_EXIST_ERROR_MESSAGE);
         }
