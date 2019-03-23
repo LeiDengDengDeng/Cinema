@@ -15,7 +15,7 @@
     </select>
 
     <delete id="deleteOneLike">
-        delete from movie_like where movie_id = #{movieId} and user_id={userId}
+        delete from movie_like where movie_id = #{movieId} and user_id=#{userId}
     </delete>
     
     <select id="getDateLikeNum" resultMap="MovieLike">
