@@ -19,6 +19,7 @@ public class MovieServiceImpl implements MovieService {
     private static final String UNLIKE_ERROR_MESSAGE = "用户未标记该电影为想看";
     private static final String USER_NOT_EXIST_ERROR_MESSAGE = "用户不存在";
     private static final String MOVIE_NOT_EXIST_ERROR_MESSAGE = "电影不存在";
+
     @Autowired
     private MovieMapper movieMapper;
     @Autowired
@@ -91,6 +92,13 @@ public class MovieServiceImpl implements MovieService {
         } catch (Exception e) {
             return ResponseVO.buildFailure("失败");
         }
+    }
+
+    @Override
+    public ResponseVO getMovieByKeyword(String keyword) {
+        if (keyword==null||keyword.equals(""))
+            return ResponseVO.buildSuccess(movieMapper.selectAllMovie());
+        return ResponseVO.buildSuccess(movieMapper.selectMovieByKeyword(keyword));
     }
 
     private boolean userLikeTheMovie(int userId, int movieId) {

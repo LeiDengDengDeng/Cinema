@@ -44,4 +44,8 @@ public class MovieController {
         return movieService.getCountOfLikes(movieId);
     }
 
+    @RequestMapping(value = "/movie/{keyword}",method = RequestMethod.GET)
+    public ResponseVO getMovieByKeyword(@PathVariable String keyword){
+        return movieService.getMovieByKeyword(keyword);
+    }
 }
