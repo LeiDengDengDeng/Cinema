@@ -49,7 +49,7 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public ResponseVO searchAllMovie() {
         try {
-            return ResponseVO.buildSuccess(movieMapper.searchAllMovie());
+            return ResponseVO.buildSuccess(movieMapper.selectAllMovie());
         } catch (Exception e) {
             return ResponseVO.buildFailure("失败");
         }
