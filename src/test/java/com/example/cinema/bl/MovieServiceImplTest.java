@@ -37,4 +37,9 @@ public class MovieServiceImplTest {
         res.getContent();
     }
 
+    @Test
+    public void getMovieByKeyword(){
+        ResponseVO res = movieService.getMovieByKeyword("惊奇队长");
+        System.out.println(res.getContent());
+    }
 }

@@ -52,9 +52,12 @@ public interface MovieService {
     ResponseVO getCountOfLikes(int movieId);
 
 
-
-
-
+    /**
+     * 根据关键字搜索电影
+     * @param keyword
+     * @return
+     */
+    ResponseVO getMovieByKeyword(String keyword);
 
 
 }
