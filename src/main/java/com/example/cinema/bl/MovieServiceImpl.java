@@ -3,10 +3,13 @@ package com.example.cinema.bl;
 import com.example.cinema.data.MovieLikeMapper;
 import com.example.cinema.data.MovieMapper;
 
+import com.example.cinema.po.DateLikeForm;
 import com.example.cinema.po.MovieForm;
 import com.example.cinema.vo.ResponseVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author fjj
@@ -103,7 +106,19 @@ public class MovieServiceImpl implements MovieService {
         return ResponseVO.buildSuccess(movieMapper.selectMovieByKeyword(keyword));
     }
 
+    @Override
+    public ResponseVO getLikeNumsGroupByDate(int movieId) {
+        List<DateLikeForm> dateLikeForms=movieLikeMapper.getDateLikeNum(movieId);
+        try {
+            return ResponseVO.buildSuccess(movieLikeMapper.getDateLikeNum(movieId));
+        } catch (Exception e) {
+            return ResponseVO.buildFailure("失败");
+        }
+    }
+
     private boolean userLikeTheMovie(int userId, int movieId) {
         return movieLikeMapper.selectLikeMovie(movieId, userId) == 0 ? false : true;
     }
+
+
 }

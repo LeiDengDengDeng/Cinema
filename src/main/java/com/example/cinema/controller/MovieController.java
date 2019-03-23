@@ -39,9 +39,13 @@ public class MovieController {
     public ResponseVO unlikeMovie(@PathVariable int movieId,@RequestParam int userId){
         return movieService.unLikeMovie(userId,movieId);
     }
-    @RequestMapping(value = "/movie/{id}/like/count", method = RequestMethod.GET)
+    @RequestMapping(value = "/movie/{movieId}/like/count", method = RequestMethod.GET)
     public ResponseVO getMovieLikeCounts(@PathVariable int movieId){
         return movieService.getCountOfLikes(movieId);
+    }
+    @RequestMapping(value = "/movie/{movieId}/like/date", method = RequestMethod.GET)
+    public ResponseVO getMovieLikeCountByDate(@PathVariable int movieId){
+        return movieService.getLikeNumsGroupByDate(movieId);
     }
 
     @RequestMapping(value = "/movie/search",method = RequestMethod.GET)
