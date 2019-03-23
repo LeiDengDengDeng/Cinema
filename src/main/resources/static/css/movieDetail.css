@@ -28,3 +28,10 @@
 .seesion-container {
     margin-top: 30px;
 }
+
+.statistic-container {
+    margin-top: 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}

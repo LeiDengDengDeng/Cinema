@@ -8,7 +8,7 @@ $(document).ready(function () {
 
         postRequest(
             '/register',
-            JSON.stringify(formData),
+            formData,
             function (res) {
                 if (res.success) {
                     alert("注册成功");

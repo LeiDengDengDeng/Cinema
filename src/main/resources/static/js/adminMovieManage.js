@@ -30,7 +30,8 @@ $(document).ready(function(){
             country: $('#movie-country-input').val(),
             starring: $('#movie-star-input').val(),
             director: $('#movie-director-input').val(),
-            screenWriter: $('#movie-writer-input').val()
+            screenWriter: $('#movie-writer-input').val(),
+            language: $('#movie-language-input').val()
         };
     }
 
@@ -74,8 +75,8 @@ $(document).ready(function(){
                 "<div class='movie-info'>" +
                 "<div class='movie-title'>" +
                 "<span class='primary-text'>" + movie.name + "</span>" +
-                "<span class='label "+(movie.showState ? 'primary-bg' : 'error-bg')+"'>" + (movie.showState ? '上映中' : '未上映') + "</span>" +
-                "<span class='movie-want'><i class='icon-heart error-text'></i>" + (movie.wantWatch || 0) + "人想看</span>" +
+                "<span class='label "+(movie.showState ? 'primary-bg' : 'error-bg')+"'>" + (movie.status ? '上映中' : '未上映') + "</span>" +
+                "<span class='movie-want'><i class='icon-heart error-text'></i>" + (movie.likeCount || 0) + "人想看</span>" +
                 "</div>" +
                 "<div class='movie-description dark-text'><span>" + movie.description + "</span></div>" +
                 "<div>类型：" + movie.type + "</div>" +
