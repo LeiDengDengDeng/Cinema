@@ -114,3 +114,10 @@ ul {
     10px -40px 50px #1caf9a;
 }
 
+.notice {
+    visibility: hidden;
+    margin-left: 40px;
+    color: rgba(255, 4, 84, 0.82);
+    font-size: 12px;
+}
+

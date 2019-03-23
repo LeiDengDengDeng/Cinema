@@ -27,29 +27,26 @@ public class AccountServiceImplTest {
 //    }
 
     @Test
-    public void testGetAccountByName1(){
-        UserForm user=new UserForm();
+    public void testGetAccountByName1() {
+        UserForm user = new UserForm();
         user.setUsername("testname");
         user.setPassword("123456");
-        Boolean result=accountService.login(user);
-        Assert.assertEquals(true,result);
+        Assert.assertEquals(true, accountService.login(user) != null);
     }
 
     @Test
-    public void testGetAccountByName2(){
-        UserForm user=new UserForm();
+    public void testGetAccountByName2() {
+        UserForm user = new UserForm();
         user.setUsername("testname");
         user.setPassword("123456dsfdsfds");
-        Boolean result=accountService.login(user);
-        Assert.assertEquals(false,result);
+        Assert.assertEquals(false, accountService.login(user) != null);
     }
 
     @Test
-    public void testGetAccountByName3(){
-        UserForm user=new UserForm();
+    public void testGetAccountByName3() {
+        UserForm user = new UserForm();
         user.setUsername("tesdsastnsdamsdse");
         user.setPassword("123456dsfdsfds");
-        Boolean result=accountService.login(user);
-        Assert.assertEquals(false,result);
+        Assert.assertEquals(false, accountService.login(user) != null);
     }
 }

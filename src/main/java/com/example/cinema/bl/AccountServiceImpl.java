@@ -13,25 +13,26 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class AccountServiceImpl implements AccountService {
-    private final static String ACCOUNT_EXIST="账号已存在";
+    private final static String ACCOUNT_EXIST = "账号已存在";
     @Autowired
     private AccountMapper accountMapper;
 
     @Override
     public ResponseVO registerAccount(UserForm userForm) {
-        int result=accountMapper.createNewAccount(userForm.getUsername(),userForm.getPassword());
-        if(0==result){
+        try {
+            accountMapper.createNewAccount(userForm.getUsername(), userForm.getPassword());
+        } catch (Exception e) {
             return ResponseVO.buildFailure(ACCOUNT_EXIST);
         }
         return ResponseVO.buildSuccess();
     }
 
     @Override
-    public boolean login(UserForm userForm) {
-        User user=accountMapper.getAccountByName(userForm.getUsername());
-        if(null==user||!user.getPassword().equals(userForm.getPassword())){
-            return false;
+    public User login(UserForm userForm) {
+        User user = accountMapper.getAccountByName(userForm.getUsername());
+        if (null == user || !user.getPassword().equals(userForm.getPassword())) {
+            return null;
         }
-        return true;
+        return user;
     }
 }

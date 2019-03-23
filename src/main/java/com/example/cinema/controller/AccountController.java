@@ -2,12 +2,14 @@ package com.example.cinema.controller;
 
 import com.example.cinema.bl.AccountServiceImpl;
 import com.example.cinema.config.InterceptorConfiguration;
+import com.example.cinema.dao.User;
 import com.example.cinema.po.UserForm;
 import com.example.cinema.vo.ResponseVO;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import javax.servlet.http.HttpSession;
 
 /**
@@ -20,17 +22,17 @@ public class AccountController {
     @Autowired
     private AccountServiceImpl accountService;
     @PostMapping("/login")
-    public ResponseVO login(@Param("user") UserForm userForm, HttpSession session){
-
-        if(!accountService.login(userForm)){
+    public ResponseVO login(@RequestBody UserForm userForm, HttpSession session){
+        User user = accountService.login(userForm);
+        if(user==null){
            return ResponseVO.buildFailure(ACCOUNT_INFO_ERROR);
         }
         //注册session
         session.setAttribute(InterceptorConfiguration.SESSION_KEY,userForm);
-        return ResponseVO.buildSuccess();
+        return ResponseVO.buildSuccess(user);
     }
     @PostMapping("/register")
-    public ResponseVO registerAccount(@Param("user") UserForm userForm){
+    public ResponseVO registerAccount(@RequestBody UserForm userForm){
         return accountService.registerAccount(userForm);
     }
 

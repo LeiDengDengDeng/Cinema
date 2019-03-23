@@ -10,7 +10,7 @@ function getRequest(url, onSuccess, onError) {
 
 function postRequest(url, data, onSuccess, onError) {
     $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: url,
         async: true,
         data: data,

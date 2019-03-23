@@ -1,5 +1,6 @@
 package com.example.cinema.bl;
 
+import com.example.cinema.dao.User;
 import com.example.cinema.po.UserForm;
 import com.example.cinema.vo.ResponseVO;
 
@@ -19,6 +20,6 @@ public interface AccountService {
      * 用户登录，登录成功会将用户信息保存再session中
      * @return
      */
-    public boolean login(UserForm userForm);
+    public User login(UserForm userForm);
 
 }

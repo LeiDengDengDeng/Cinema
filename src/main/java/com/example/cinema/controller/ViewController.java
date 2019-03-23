@@ -14,6 +14,11 @@ public class ViewController {
         return "index";
     }
 
+    @RequestMapping(value = "/signUp")
+    public String getSignUp() {
+        return "signUp";
+    }
+
     @RequestMapping(value = "/admin/movieManage")
     public String getAdminMovieManage() {
         return "adminMovieManage";
