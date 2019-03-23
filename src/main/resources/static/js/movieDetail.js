@@ -64,7 +64,7 @@ $(document).ready(function(){
     }
 
     function repaintMovieDetail(movie) {
-        isLike ? $('.icon-heart').removeClass('error-text') : $('.icon-heart').addClass('error-text');
+        !isLike ? $('.icon-heart').removeClass('error-text') : $('.icon-heart').addClass('error-text');
         $('#like-btn span').text(isLike ? ' 已想看' : ' 想 看');
         $('#movie-img').attr('src',movie.posterUrl);
         $('#movie-name').text(movie.name);
