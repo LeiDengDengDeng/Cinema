@@ -9,7 +9,7 @@ $(document).ready(function(){
         }
         postRequest(
             '/movie/add',
-            JSON.stringify(formData),
+            formData,
             function (res) {
                 getMovieList();
                 $("#movieModal").modal('hide');

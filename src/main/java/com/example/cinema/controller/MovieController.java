@@ -31,11 +31,11 @@ public class MovieController {
         return movieService.searchAllMovie();
     }
 
-    @RequestMapping(value = "/movie/{id}/like", method = RequestMethod.POST)
+    @RequestMapping(value = "/movie/{movieId}/like", method = RequestMethod.POST)
     public ResponseVO likeMovie(@PathVariable int movieId,@RequestParam int userId){
         return movieService.likeMovie(userId,movieId);
     }
-    @RequestMapping(value = "/movie/{id}/unlike", method = RequestMethod.POST)
+    @RequestMapping(value = "/movie/{movieId}/unlike", method = RequestMethod.POST)
     public ResponseVO unlikeMovie(@PathVariable int movieId,@RequestParam int userId){
         return movieService.unLikeMovie(userId,movieId);
     }

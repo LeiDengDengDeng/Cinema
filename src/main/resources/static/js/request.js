@@ -13,7 +13,7 @@ function postRequest(url, data, onSuccess, onError) {
         type: 'POST',
         url: url,
         async: true,
-        data: data,
+        data: JSON.stringify(data),
         contentType: 'application/json',
         processData: false,
         success: onSuccess,

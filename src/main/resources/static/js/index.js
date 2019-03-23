@@ -8,7 +8,7 @@ $(document).ready(function () {
 
         postRequest(
             '/login',
-            JSON.stringify(formData),
+            formData,
             function (res) {
                 if (res.success) {
                     sessionStorage.setItem('username', formData.username);

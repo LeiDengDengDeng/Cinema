@@ -33,7 +33,7 @@ public class ViewController {
         return "userHome";
     }
 
-    @RequestMapping(value = "/user/MovieDetail")
+    @RequestMapping(value = "/user/movieDetail")
     public String getUserMovieDetail(@RequestParam int id) {
         return "userMovieDetail";
     }
