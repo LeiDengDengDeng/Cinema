@@ -14,6 +14,6 @@ public class InterceptorConfiguration implements WebMvcConfigurer {
     public final static String SESSION_KEY="user";
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new SessionInterceptor()).excludePathPatterns("/login","/index","/error").addPathPatterns("/**");
+        registry.addInterceptor(new SessionInterceptor()).excludePathPatterns("/login","/index","/error","/**/*.css","/**/*.js","/**/*.png","/**/*.gif","/**/*.jpg","/**/*.jpeg").addPathPatterns("/**");
     }
 }
