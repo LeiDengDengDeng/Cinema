@@ -83,6 +83,7 @@ public class MovieServiceImpl implements MovieService {
             return ResponseVO.buildFailure(MOVIE_NOT_EXIST_ERROR_MESSAGE);
         }
         try {
+            movieLikeMapper.deleteOneLike(movieId, userId);
             return ResponseVO.buildSuccess(movieLikeMapper.deleteOneLike(userId, movieId));
         } catch (Exception e) {
             return ResponseVO.buildFailure("失败");
@@ -108,7 +109,6 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public ResponseVO getLikeNumsGroupByDate(int movieId) {
-        List<DateLikeForm> dateLikeForms=movieLikeMapper.getDateLikeNum(movieId);
         try {
             return ResponseVO.buildSuccess(movieLikeMapper.getDateLikeNum(movieId));
         } catch (Exception e) {
