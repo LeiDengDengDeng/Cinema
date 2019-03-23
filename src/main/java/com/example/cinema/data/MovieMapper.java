@@ -38,7 +38,7 @@ public interface MovieMapper {
      * 展示所有电影
      * @return
      */
-    List<MovieVO> searchAllMovie();
+    List<MovieVO> selectAllMovie();
 
     /**
      * 根据关键字搜索电影

@@ -64,6 +64,11 @@ public class MovieVO {
      * 是否想看,0:未标记想看，1：已标记想看
      */
     private Integer islike;
+    /**
+     * 想看人数
+     * @return
+     */
+    private Integer likeCount;
 
     public Integer getId() {
         return id;
@@ -175,5 +180,13 @@ public class MovieVO {
 
     public void setIslike(Integer islike) {
         this.islike = islike;
+    }
+
+    public Integer getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(Integer likeCount) {
+        this.likeCount = likeCount;
     }
 }
