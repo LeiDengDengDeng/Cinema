@@ -21,9 +21,9 @@ public class MovieController {
         return movieService.addMovie(addMovieForm);
     }
 
-    @RequestMapping(value = "/movie/{id}", method = RequestMethod.GET)
-    public ResponseVO searchOneMovieById(@PathVariable int id){
-        return movieService.searchOneMovieById(id);
+    @RequestMapping(value = "/movie/{id}/{userId}", method = RequestMethod.GET)
+    public ResponseVO searchOneMovieByIdAndUserId(@PathVariable int id, @PathVariable int userId){
+        return movieService.searchOneMovieByIdAndUserId(id, userId);
     }
 
     @RequestMapping(value = "/movie/all", method = RequestMethod.GET)

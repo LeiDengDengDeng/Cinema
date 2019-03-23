@@ -3,19 +3,23 @@
 <mapper namespace="com.example.cinema.data.MovieMapper">
     <insert id="insertOneMovie" parameterType="com.example.cinema.po.MovieForm"
             useGeneratedKeys="true" keyProperty="id">
-        insert into movie(name, poster_url, director, screen_writer, starring, type, country, language, length, start_date, end_date, description)
-        values(#{name}, #{posterUrl}, #{director},  #{screenWriter}, #{starring}, #{type}, #{country}, #{language}, #{length}, #{startDate}, #{endDate}, #{description})
+        insert into movie(name, poster_url, director, screen_writer, starring, type, country, language, length, start_date, description, status)
+        values(#{name}, #{posterUrl}, #{director},  #{screenWriter}, #{starring}, #{type}, #{country}, #{language}, #{length}, #{startDate}, #{description},#{status})
     </insert>
 
     <select id="selectMovieById" resultMap="Movie">
         select * from movie where id = #{id}
     </select>
 
-    <select id="selectAllMovie" resultMap="Movie">
-        select * from movie
+    <select id="selectMovieByIdAndUserId" resultMap="Movie">
+        select * from movie left join movie_like on movie_like.user_id = 1 and movie.id = movie_like.movie_id;
     </select>
 
-    <resultMap id="Movie" type="com.example.cinema.po.MovieForm">
+    <select id="searchAllMovie" resultMap="Movie">
+        select * from movie;
+    </select>
+
+    <resultMap id="Movie" type="com.example.cinema.vo.MovieVO">
         <id column="id" property="id"></id>
         <result column="poster_url" property="posterUrl"></result>
         <result column="screen_writer" property="screenWriter"></result>

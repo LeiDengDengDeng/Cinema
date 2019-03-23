@@ -1,12 +1,12 @@
-package com.example.cinema.po;
+package com.example.cinema.vo;
 
 import java.util.Date;
 
 /**
  * @author fjj
- * @date 2019/3/12 6:20 PM
+ * @date 2019/3/23 1:12 PM
  */
-public class MovieForm {
+public class MovieVO {
     /**
      * 电影id
      */
@@ -60,6 +60,10 @@ public class MovieForm {
      * 电影状态，0：未上映，1：上映中，2：已结束
      */
     private Integer status;
+    /**
+     * 是否想看,0:未标记想看，1：已标记想看
+     */
+    private Integer islike;
 
     public Integer getId() {
         return id;
@@ -163,5 +167,13 @@ public class MovieForm {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public Integer getIslike() {
+        return islike;
+    }
+
+    public void setIslike(Integer islike) {
+        this.islike = islike;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.cinema.data;
 
 import com.example.cinema.po.MovieForm;
+import com.example.cinema.vo.MovieVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -23,11 +24,19 @@ public interface MovieMapper {
      * @param id
      * @return
      */
-    MovieForm selectMovieById(int id);
+    MovieVO selectMovieById(int id);
+
+    /**
+     * 根据id和userId查找电影
+     * @param id
+     * @param userId
+     * @return
+     */
+    MovieVO selectMovieByIdAndUserId(int id, int userId);
 
     /**
      * 展示所有电影
      * @return
      */
-    List<MovieForm> selectAllMovie();
+    List<MovieVO> searchAllMovie();
 }
