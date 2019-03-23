@@ -97,7 +97,7 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public ResponseVO getMovieByKeyword(String keyword) {
         if (keyword==null||keyword.equals(""))
-            return ResponseVO.buildSuccess(movieMapper.searchAllMovie());
+            return ResponseVO.buildSuccess(movieMapper.selectAllMovie());
         return ResponseVO.buildSuccess(movieMapper.selectMovieByKeyword(keyword));
     }
 
