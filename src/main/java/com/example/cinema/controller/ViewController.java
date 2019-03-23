@@ -2,6 +2,7 @@ package com.example.cinema.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author deng
@@ -24,9 +25,17 @@ public class ViewController {
         return "adminMovieManage";
     }
 
+    @RequestMapping(value = "/admin/movieDetail")
+    public String getAdminMovieDetail(@RequestParam int id) { return "adminMovieDetail"; }
+
     @RequestMapping(value = "/user/home")
     public String getUserHome() {
         return "userHome";
+    }
+
+    @RequestMapping(value = "/user/MovieDetail")
+    public String getUserMovieDetail(@RequestParam int id) {
+        return "userMovieDetail";
     }
 
     @RequestMapping(value = "/user/movie")
