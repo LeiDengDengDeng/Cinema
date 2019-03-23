@@ -44,6 +44,7 @@ public class MovieServiceImpl implements MovieService {
         try {
             return ResponseVO.buildSuccess(movieMapper.selectMovieByIdAndUserId(id, userId));
         } catch (Exception e) {
+            e.printStackTrace();
             return ResponseVO.buildFailure("失败");
         }
 
@@ -54,6 +55,7 @@ public class MovieServiceImpl implements MovieService {
         try {
             return ResponseVO.buildSuccess(movieMapper.selectAllMovie());
         } catch (Exception e) {
+            e.printStackTrace();
             return ResponseVO.buildFailure("失败");
         }
     }
