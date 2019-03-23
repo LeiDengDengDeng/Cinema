@@ -18,9 +18,10 @@ public interface MovieService {
     /**
      * 根据id搜索电影
      * @param id
+     * @param userId
      * @return
      */
-    ResponseVO searchOneMovieById(int id);
+    ResponseVO searchOneMovieByIdAndUserId(int id, int userId);
 
     /**
      * 搜索全部电影

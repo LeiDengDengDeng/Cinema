@@ -37,9 +37,9 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public ResponseVO searchOneMovieById(int id) {
+    public ResponseVO searchOneMovieByIdAndUserId(int id, int userId) {
         try {
-            return ResponseVO.buildSuccess(movieMapper.selectMovieById(id));
+            return ResponseVO.buildSuccess(movieMapper.selectMovieByIdAndUserId(id, userId));
         } catch (Exception e) {
             return ResponseVO.buildFailure("失败");
         }
@@ -49,7 +49,7 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public ResponseVO searchAllMovie() {
         try {
-            return ResponseVO.buildSuccess(movieMapper.selectAllMovie());
+            return ResponseVO.buildSuccess(movieMapper.searchAllMovie());
         } catch (Exception e) {
             return ResponseVO.buildFailure("失败");
         }
