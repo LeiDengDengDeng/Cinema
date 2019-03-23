@@ -20,6 +20,12 @@ public class MovieServiceImplTest {
     MovieService movieService;
 
     @Test
+    public void getLikeNumsGroupByDate() throws Exception {
+        ResponseVO res=movieService.getLikeNumsGroupByDate(11);
+        res.getContent();
+    }
+
+    @Test
     public void likeMovie() throws Exception {
         ResponseVO res=movieService.likeMovie(0,10);
         res.getMessage();

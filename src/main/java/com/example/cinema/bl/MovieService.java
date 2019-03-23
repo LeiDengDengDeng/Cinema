@@ -60,5 +60,11 @@ public interface MovieService {
      */
     ResponseVO getMovieByKeyword(String keyword);
 
+    /**
+     * 获得电影每日的想看人数
+     * @param movieId
+     * @return
+     */
+    ResponseVO getLikeNumsGroupByDate(int movieId);
 
 }
