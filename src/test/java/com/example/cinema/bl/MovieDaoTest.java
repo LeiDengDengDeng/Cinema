@@ -2,6 +2,7 @@ package com.example.cinema.bl;
 
 import com.example.cinema.data.MovieMapper;
 import com.example.cinema.po.MovieForm;
+import com.example.cinema.vo.MovieVO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class MovieDaoTest {
 
     @Test
     public void testSearchByKeyword(){
-        List<MovieForm> list = movieMapper.selectMovieByKeyword("");
+        List<MovieVO> list = movieMapper.selectMovieByKeyword("");
         System.out.println(list.size());
         System.out.println(list.get(0).getName());
     }

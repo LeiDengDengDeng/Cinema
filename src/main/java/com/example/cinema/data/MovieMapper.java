@@ -45,5 +45,5 @@ public interface MovieMapper {
      * @param keyword
      * @return
      */
-    List<MovieForm> selectMovieByKeyword(String keyword);
+    List<MovieVO> selectMovieByKeyword(String keyword);
 }
